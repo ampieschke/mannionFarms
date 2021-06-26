@@ -11,7 +11,7 @@ app.use(routes);
 /////////these lines are for socket.io///////
 const server = http.createServer(app);
 const io = socketIo(server);
-const port = process.env.PORT || 4001;
+// const port = process.env.PORT || 4001;
 const index = require("./routes/index");
 
 let interval;
@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
 server.listen(port, () =>
