@@ -1,22 +1,40 @@
-import React, {useState, useEffect} from 'react';
-import socketIOClient from 'socket.io-client';
-const ENDPOINT = 'http://127.0.0.1:4001';
+import React from 'react';
+import "./style.css";
+import io from 'socket.io-client'
+
+// let socket;
+
 
 function Chatbox() {
-  const [response, setResponse] = useState('');
 
-  useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
-    socket.on('FromAPI', data => {
-      setResponse(data);
-  });
-return () => socket.disconnect();
-}, []);
+  var socket = io();
+  var messages = document.getElementById('messages')
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+    function handleSubmit(e) {
+    e.preventDefault();
+    if (input.value) {
+      console.log(input.value)
+      // socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  };
+
+  socket.on('chat message', function(msg){
+    var item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    })
+
   return (
-    <div>
+    <div className = 'chatbox'>
 
-      <p>It's <time dateTime={response}>{response}</time></p>
-      {/* <Home /> */}
+    <ul id="messages"></ul>
+    <form onSubmit={handleSubmit} id="form" action="">
+      <input id="input"/><button>Send</button>
+    </form>
+
     </div>
   );
 }
