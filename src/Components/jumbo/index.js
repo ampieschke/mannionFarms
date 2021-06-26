@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 class Jumbo extends Component {
   render() {
     return (
+      <div className = 'container'>
       <Jumbotron>
         <h1>Hello, world!</h1>
         <p>
@@ -15,6 +16,7 @@ class Jumbo extends Component {
           <Button variant="secondary">Learn more</Button>
         </p>
       </Jumbotron>
+      </div>
     );
   }
 }

@@ -1,21 +1,24 @@
 import "./App.css";
-import React, {useState} from 'react';
-// import Home from "./pages/home";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/home";
+import ContentLog from "./pages/contentLog";
 import Navbar from "./Components/navbar";
-import Jumbo from "./Components/jumbo";
 import Chatbox from "./Components/chatbox";
 
 
 function App() {
-  const [loadClient, setLoadChatbox] = useState(true);
   return (
     <div className="App">
       <Navbar />
-      <Jumbo />
-      {/* <Chatbox /> */}
-      {/* <Home /> */}
-      <button onClick={() => setLoadChatbox(prevState => !prevState)}>STOP CLIENT</button>
-      {loadClient ? <Chatbox /> : null}
+      <Chatbox />
+      <Home />
+      <Router>
+<Switch>
+  <Route exact path='/' component={Home}/>
+  <Route exact path='/content' component={ContentLog} />
+</Switch>
+</Router>
     </div>
   );
 }

@@ -1,38 +1,58 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./style.css";
 import io from 'socket.io-client'
 
-// let socket;
+
+let socket;
+const CONNECTION_PORT = "localhost:3000/";
 
 
-function Chatbox() {
+function Chatbox(){
+const [message, setMSG] = useState('');
+const [msgList, setMsgList] = useState([])
+console.log(message)
 
-  var socket = io();
-  var messages = document.getElementById('messages')
-  var form = document.getElementById('form');
-  var input = document.getElementById('input');
+useEffect(() => {
+ socket = io(CONNECTION_PORT);
+},);
 
-    function handleSubmit(e) {
-    e.preventDefault();
-    if (input.value) {
-      console.log(input.value)
-      // socket.emit('chat message', input.value);
-      input.value = '';
-    }
-  };
+useEffect(() => {
+  socket.on('receive_message', (data) => {
+    setMsgList([...msgList, data]);
+  });
+});
 
-  socket.on('chat message', function(msg){
-    var item = document.createElement('li');
-    item.textContent = msg;
-    messages.appendChild(item);
-    })
+const sendMSG = async () => {
+  let msgContent = {
+    content:{
+      author: "placeholder",
+      message: message,
+    },
+  }
+
+    await socket.emit("send_message", msgContent);
+    setMsgList([...msgList, msgContent.content]);
+    setMSG('');
+    console.log(message)
+
+}
 
   return (
     <div className = 'chatbox'>
-
+      <div className='messages'>
+        {msgList.map((val, key) => {
+          return(
+            <div className='messageContainer'>
+              <div className='messageIndividual'>
+                {val.author}: {val.message}
+                </div>
+              </div>
+          )
+        })}
+      </div>
     <ul id="messages"></ul>
-    <form onSubmit={handleSubmit} id="form" action="">
-      <input id="input"/><button>Send</button>
+    <form id="form" action="">
+      <input type='text' placeholder='Message...' id="input"/><button onClick={sendMSG}>Go!</button>
     </form>
 
     </div>
