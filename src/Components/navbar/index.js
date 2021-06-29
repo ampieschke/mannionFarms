@@ -17,7 +17,7 @@ class Navbar extends Component {
             <Nav.Link href="./content">
               <span>Content</span>
             </Nav.Link>
-            <Nav.Link href="#">
+            <Nav.Link href="./history">
               <span>Historical Data</span>
             </Nav.Link>
           </Nav>
