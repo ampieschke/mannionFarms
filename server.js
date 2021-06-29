@@ -3,7 +3,7 @@ const routes = require("./routes");
 const path = require("path");
 const http = require("http").Server(app);
 const io = require('socket.io')(http);
-
+const mongoose = require('mongoose')
 const app = express();
 
 app.use(routes);
@@ -16,8 +16,13 @@ io.on('connection', (socket) => {
   });
 });
 
-
 ////////END SOCKET.IO/////////
+
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mannionContent', {
+  useNewUrlParser: true,
+  useFindandModify: false
+});
 
 
 // serve static assets if in production

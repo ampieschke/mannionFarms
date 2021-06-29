@@ -6,7 +6,7 @@ import ContentLog from "./pages/contentLog";
 import History from './pages/history';
 import Navbar from "./Components/navbar";
 import Chatbox from "./Components/chatbox";
-import Countdown from "./Components/countdown";
+
 
 
 
@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Countdown />
       <Router>
 <Switch>
   <Route exact path='/' component={Home}/>

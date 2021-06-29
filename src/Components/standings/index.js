@@ -5,7 +5,7 @@ class Standings extends Component {
     render(){
         return(
 
-<h3>Standings</h3>
+<h4>Standings</h4>
 
 
 

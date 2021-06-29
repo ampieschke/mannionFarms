@@ -11,7 +11,7 @@ class Subnews extends Component {
           <Row>
           <Col lg='8'>
               <Row>
-                <Col md="auto" sm='10' xs='10' className="contentRow">
+                <Col md="10" sm='10' xs='10' className="contentRow">
                     <h3>An Article!</h3>
                 </Col>
                 <Col>
@@ -19,7 +19,7 @@ class Subnews extends Component {
                 </Col>
               </Row>
               <Row>
-                <Col md="auto" sm='10' xs='10' className="contentRow">
+                <Col md="10" sm='10' xs='10' className="contentRow">
                     <h3>An Article!</h3>
                 </Col>
                 <Col>
