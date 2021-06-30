@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import API from "../../utils/API";
+// import Button from "react-bootstrap/Button"
 
 
 
@@ -17,6 +18,7 @@ class ContentGen extends Component{
         // this.loadTopics = this.loadTopics.bind(this)
       }
 
+
       titleChange = (e) => {
         this.setState({ title: e.target.value });
       };
@@ -29,17 +31,17 @@ class ContentGen extends Component{
           title: this.state.title,
           content: this.state.content,
         });
-        window.location.reload();
+        // window.location.reload();
       }
 
     render(){
 
-
         return(
             <div>
             <h3>Content Generator</h3>
+            <p>{this.state.title}</p>
             <form onSubmit={this.handleSubmit} className="col s12">
-            <div class="input-field col xl5 l5 m5 s12">
+            <div className="input-field col xl5 l5 m5 s12">
               <input
                 id="title"
                 className="articleTitle"
@@ -48,7 +50,7 @@ class ContentGen extends Component{
                 value={this.state.title}
               ></input>
             </div>
-            <div classname="input-field col xl2 l2 m2 s12 ">
+            <div className="input-field col xl2 l2 m2 s12 ">
               <button variant="primary" type="submit">
                 Submit
               </button>

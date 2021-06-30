@@ -5,7 +5,7 @@ import Home from "./pages/home";
 import ContentLog from "./pages/contentLog";
 import History from './pages/history';
 import Navbar from "./Components/navbar";
-import Chatbox from "./Components/chatbox";
+// import Chatbox from "./Components/chatbox";
 
 
 
@@ -21,7 +21,7 @@ function App() {
   <Route exact path='/history' component={History} />
 </Switch>
 </Router>
-<Chatbox />
+{/* <Chatbox /> */}
     </div>
   );
 }
