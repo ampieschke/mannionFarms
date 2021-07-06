@@ -1,8 +1,8 @@
 const express = require("express");
 const routes = require("./routes");
 const path = require("path");
-const http = require("http").Server(app);
-const io = require('socket.io')(http);
+// const http = require("http").Server(app);
+// const io = require('socket.io')(http);
 const mongoose = require('mongoose')
 const app = express();
 
@@ -10,16 +10,16 @@ app.use(routes);
 
 /////////these lines are for socket.io///////
 
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
-});
+// io.on('connection', (socket) => {
+//   socket.on('chat message', (msg) => {
+//     io.emit('chat message', msg);
+//   });
+// });
 
 ////////END SOCKET.IO/////////
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mannionContent', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/MannionFarms', {
   useNewUrlParser: true,
   useFindandModify: false
 });

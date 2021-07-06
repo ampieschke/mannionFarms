@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import "./style.css";
+import Alert from 'react-bootstrap/Alert'
 
 
 class Countdown extends Component {
@@ -19,7 +21,9 @@ class Countdown extends Component {
 
         return(
                 <div>
-                    <h3 id='clock'> </h3>
+                         <Alert variant="danger">
+        <Alert.Heading id="clock"></Alert.Heading>
+      </Alert>
                 </div>
         )
     }

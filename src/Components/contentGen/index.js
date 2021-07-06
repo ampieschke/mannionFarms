@@ -9,7 +9,7 @@ class ContentGen extends Component{
         super(props);
         this.state = {
           title: "",
-          content: ""
+          // content: ""
         };
         this.titleChange = this.titleChange.bind(this);
         // this.handleChange = this.handleChange.bind(this);
@@ -26,10 +26,10 @@ class ContentGen extends Component{
       handleSubmit(e) {
         e.preventDefault();
         console.log(this.state.title);
-        console.log(this.state.content);
+        // console.log(this.state.content);
         API.saveArticle({
           title: this.state.title,
-          content: this.state.content,
+          // content: this.state.content,
         });
         // window.location.reload();
       }

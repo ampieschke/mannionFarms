@@ -2,18 +2,20 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavBar from "react-bootstrap/NavBar";
+import "./style.css";
 
 class Navbar extends Component {
   render() {
     return (
       <NavBar className="NavBar">
         <Container>
-          <Nav className="selection">
+          <Nav>
+          <NavBar.Brand href="/" >
+            <img src='../../logo.png' className="d-inline-block align-top" width='60px' alt="Mannion Farms logo" />
+            </NavBar.Brand>
             <Nav.Link href="./">
               <span>Home</span>
             </Nav.Link>
-            {/* <Nav.Link href="./Register"><span className="glyphicon glyphicon-user"></span>Sign Up</Nav.Link>
-              <Nav.Link href="./Login"><span className="glyphicon glyphicon-log-in"></span>Login</Nav.Link> */}
             <Nav.Link href="./content">
               <span>Content</span>
             </Nav.Link>

@@ -6,6 +6,7 @@ import ContentLog from "./pages/contentLog";
 import History from './pages/history';
 import Navbar from "./Components/navbar";
 // import Chatbox from "./Components/chatbox";
+import './index.css'
 
 
 

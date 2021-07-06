@@ -1,18 +1,19 @@
 import React from "react";
 import Jumbo from "../Components/jumbo";
-import Subnews from "../Components/subnews";
+import SubContent from "../Components/subContent";
 import Countdown from "../Components/countdown";
-import Row from 'react-bootstrap/Row'
+// import Row from 'react-bootstrap/Row'
+// import Standings from '../Components/standings'
 
 function Home() {
   return (
     <div>
       <Countdown />
       <Jumbo />
-      <Subnews />
-      <Row>
-    {/* Going to migrate SubNews and Standings here */}
-      </Row>
+      {/* <Row> */}
+      <SubContent />
+      {/* <Standings /> */}
+      {/* </Row> */}
     </div>
   );
 }

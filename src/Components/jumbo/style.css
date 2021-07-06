@@ -1,0 +1,12 @@
+#main{
+background-image:url('./brady-faded.png');
+background-size: cover;
+}
+
+h1{
+    font-weight: bold !important;
+}
+
+button{
+    background-color: darkgreen !important;
+}

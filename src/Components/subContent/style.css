@@ -1,4 +1,4 @@
-.contentRow{
+.subRow{
     text-align: left;
 }
 
@@ -6,6 +6,7 @@
     margin: 0px 3px 0px;
 }
 
-.standings{
+/* .standings{
     float:right
-}
+} */
+
