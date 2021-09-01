@@ -6,7 +6,7 @@ const articleRoutes = require("./article");
 router.use("/article", articleRoutes);
 // router.use("/users", userRoutes);
 router.get("/test", (req, res) => {
-  res.send("Hello")
+  res.send("Hello");
 });
 
 module.exports = router;
